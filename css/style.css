@@ -10,12 +10,13 @@
 
 body {
   font-family: "Inter", sans-serif;
-  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-size: clamp(1.2rem, 2.5vw, 2rem);
   font-weight: 300;
   height: 100vh;
   background-image: url("../images/pattern-curve.svg");
   background-repeat: no-repeat;
   background-position-y: 100%;
+  color: #202046;
 }
 
 .container {
@@ -23,20 +24,28 @@ body {
 }
 
 .container .inner-container {
-  background-image: url("../images/pattern-bg.svg");
-  background-repeat: no-repeat;
-  background-position-x: 100%;
-  padding: 63px 92px 92px 0px;
   position: relative;
 }
 
-.container .inner-container #user {
-  width: clamp(253px, 100%, 540px);
+.container .inner-container .image {
+  padding: 63px 92px 92px 64px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-image: url("../images/pattern-bg.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
   margin-left: auto;
-  display: block;
+}
+
+.container .inner-container #user {
+  width: clamp(253px, 50vw, 540px);
 }
 
 .container #info {
+  background-image: url("../images/pattern-quotes.svg");
+  background-repeat: no-repeat;
+  background-position-x: 95px;
   position: absolute;
   margin-top: 97px;
   margin-right: 450px;
@@ -55,24 +64,71 @@ body {
 
 .container #info #job {
   white-space: nowrap;
+  color: #babacf;
+}
+
+/* Media Section */
+@media (min-width: 1500px) {
+  body {
+    display: -ms-grid;
+    display: grid;
+    place-items: center;
+  }
+  .container {
+    width: 1440px;
+    margin: 0 auto;
+  }
 }
 
 @media (max-width: 1100px) {
   .container {
     padding: 50px;
   }
-  .container .inner-container {
-    padding-right: 50px;
-  }
   .container #info {
-    margin-top: 50px;
     left: 5%;
+  }
+  .container #info .description {
+    margin-bottom: 25px;
   }
 }
 
-/* 1100px < .description: 
-                font-size: 1.5rem
-                margin: 50px 0;
-            #info: margin-top: 80px
-*/
+@media (max-width: 820px) {
+  .container {
+    padding: 0px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .container .inner-container {
+    padding-right: 0px;
+    margin: 50px 20px;
+    min-width: 335px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .container .inner-container .image {
+    padding: 30px 40px;
+    margin-right: auto;
+  }
+  .container #info {
+    background-position-x: 45%;
+    position: relative;
+    margin: 0;
+    left: 0;
+    text-align: center;
+  }
+  .container #info #name {
+    display: block;
+  }
+}
 /*# sourceMappingURL=style.css.map */

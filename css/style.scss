@@ -3,7 +3,8 @@
 $darkBlue: hsl(240, 38%, 20%);
 $graysihBlue: hsl(240, 18%, 77%);
 
-$fontSize: 2rem;
+$fontSizeMax: 2rem;
+$fontSizeMin: 1.2rem;
 
 $fontFamliy: "Inter", sans-serif;
 
@@ -21,39 +22,42 @@ $fontBold: 700;
 
 body {
     font-family: $fontFamliy;
-    // font-size: $fontSize;
-    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-size: clamp($fontSizeMin, 2.5vw, $fontSizeMax);
     font-weight: $fontLight;
     height: 100vh;
     background-image: url("../images/pattern-curve.svg");
     background-repeat: no-repeat;
     background-position-y: 100%;
+    color: $darkBlue;
 }
 
 .container {
     padding: 50px 73px;
-    // max-width: 1500px;
 
     .inner-container {
-        background-image: url("../images/pattern-bg.svg");
-        background-repeat: no-repeat;
-        background-position-x: 100%;
-        padding: 63px 92px 92px 0px;
         position: relative;
-        #user {
-            width: clamp(253px, 100%, 540px);
+        .image {
+            padding: 63px 92px 92px 64px;
+            width: fit-content;
+            background-image: url("../images/pattern-bg.svg");
+            background-repeat: no-repeat;
+            background-size: contain;
             margin-left: auto;
-            display: block;
+        }
+        #user {
+            width: clamp(253px, 50vw, 540px);
         }
     }
     #info {
+        background-image: url("../images/pattern-quotes.svg");
+        background-repeat: no-repeat;
+        background-position-x: 95px;
         position: absolute;
         margin-top: 97px;
         margin-right: 450px;
         left: 90px;
         .description {
             margin: 75px 0 50px;
-            // max-width: 625px;
             width: clamp(20ch, 100%, 625px);
         }
         #name {
@@ -62,30 +66,64 @@ body {
         }
         #job {
             white-space: nowrap;
+            color: $graysihBlue;
         }
+    }
+}
+
+/* Media Section */
+@media (min-width: 1500px) {
+    body {
+        display: grid;
+        place-items: center;
+    }
+    .container {
+        width: 1440px;
+        margin: 0 auto;
     }
 }
 
 @media (max-width: 1100px) {
     .container {
         padding: 50px;
-
-        .inner-container {
-            padding-right: 50px;
-        }
         #info {
-            margin-top: 50px;
             left: 5%;
+            .description {
+                margin-bottom: 25px;
+            }
         }
     }
 }
 
-// 1500px > container: (center)
+@media (max-width: 820px) {
+    .container {
+        padding: 0px;
+        max-width: 600px;
+        margin: 0 auto;
 
-/* 1100px < .description: 
-                font-size: 1.5rem
-                margin: 50px 0;
-            #info: margin-top: 80px
-*/
+        .inner-container {
+            padding-right: 0px;
+            margin: 50px 20px;
+            min-width: 335px;
 
-//  850px < mobile
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+            justify-content: center;
+            .image {
+                padding: 30px 40px;
+                margin-right: auto;
+            }
+        }
+        #info {
+            background-position-x: 45%;
+            position: relative;
+            margin: 0;
+            left: 0;
+            text-align: center;
+            #name {
+                display: block;
+            }
+        }
+    }
+}
