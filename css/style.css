@@ -36,10 +36,38 @@ body {
   background-repeat: no-repeat;
   background-size: contain;
   margin-left: auto;
+  position: relative;
+}
+
+.container .inner-container .image .icon {
+  display: inline-block;
+  width: 112px;
+  height: 57px;
+  background-color: white;
+  position: absolute;
+  right: calc(100% - 126px - 112px);
+  bottom: 75px;
+  border-radius: 63px;
+  overflow: hidden;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container .inner-container .image .icon #prev,
+.container .inner-container .image .icon #next {
+  width: 50%;
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
 }
 
 .container .inner-container #user {
   width: clamp(253px, 50vw, 540px);
+  -webkit-box-shadow: 0 45px 50px -20px rgba(162, 154, 154, 0.5);
+          box-shadow: 0 45px 50px -20px rgba(162, 154, 154, 0.5);
 }
 
 .container #info {
@@ -47,6 +75,7 @@ body {
   background-repeat: no-repeat;
   background-position-x: 95px;
   position: absolute;
+  z-index: 2;
   margin-top: 97px;
   margin-right: 450px;
   left: 90px;
@@ -119,6 +148,12 @@ body {
   .container .inner-container .image {
     padding: 30px 40px;
     margin-right: auto;
+  }
+  .container .inner-container .image .icon {
+    left: 50%;
+    top: 80%;
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
   }
   .container #info {
     background-position-x: 45%;

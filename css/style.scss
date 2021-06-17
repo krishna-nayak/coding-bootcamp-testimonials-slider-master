@@ -1,16 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap");
 
-$darkBlue: hsl(240, 38%, 20%);
-$graysihBlue: hsl(240, 18%, 77%);
-
-$fontSizeMax: 2rem;
-$fontSizeMin: 1.2rem;
-
-$fontFamliy: "Inter", sans-serif;
-
-$fontLight: 300;
-$fontMedium: 500;
-$fontBold: 700;
+@import "_variable";
 
 *,
 *::after,
@@ -43,9 +33,34 @@ body {
             background-repeat: no-repeat;
             background-size: contain;
             margin-left: auto;
+            position: relative;
+            .icon {
+                display: inline-block;
+                width: 112px;
+                height: 57px;
+                background-color: white;
+
+                position: absolute;
+                right: calc(100% - 126px - 112px);
+                bottom: 75px;
+
+                border-radius: 63px;
+                overflow: hidden;
+                text-align: center;
+
+                display: flex;
+                #prev,
+                #next {
+                    width: 50%;
+                    height: 100%;
+                    display: grid;
+                    place-items: center;
+                }
+            }
         }
         #user {
             width: clamp(253px, 50vw, 540px);
+            box-shadow: 0 45px 50px -20px hsla(0, 4%, 62%, 0.5);
         }
     }
     #info {
@@ -53,6 +68,7 @@ body {
         background-repeat: no-repeat;
         background-position-x: 95px;
         position: absolute;
+        z-index: 2;
         margin-top: 97px;
         margin-right: 450px;
         left: 90px;
@@ -113,6 +129,12 @@ body {
             .image {
                 padding: 30px 40px;
                 margin-right: auto;
+
+                .icon {
+                    left: 50%;
+                    top: 80%;
+                    transform: translate(-50%, 0);
+                }
             }
         }
         #info {
