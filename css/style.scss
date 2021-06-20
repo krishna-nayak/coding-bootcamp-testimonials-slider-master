@@ -55,12 +55,16 @@ body {
                     height: 100%;
                     display: grid;
                     place-items: center;
+
+                    border: none;
+                    text-decoration: none;
+                    background: white;
                 }
             }
         }
         #user {
             width: clamp(253px, 50vw, 540px);
-            box-shadow: 0 45px 50px -20px hsla(0, 4%, 62%, 0.5);
+            box-shadow: 0 45px 50px -20px hsla(240, 38%, 20%, 0.5);
         }
     }
     #info {
@@ -70,7 +74,6 @@ body {
         position: absolute;
         z-index: 2;
         margin-top: 160px;
-        // margin-top: 97px;
         margin-right: 450px;
         left: 90px;
         .description {

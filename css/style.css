@@ -62,12 +62,15 @@ body {
   display: -ms-grid;
   display: grid;
   place-items: center;
+  border: none;
+  text-decoration: none;
+  background: white;
 }
 
 .container .inner-container #user {
   width: clamp(253px, 50vw, 540px);
-  -webkit-box-shadow: 0 45px 50px -20px rgba(162, 154, 154, 0.5);
-          box-shadow: 0 45px 50px -20px rgba(162, 154, 154, 0.5);
+  -webkit-box-shadow: 0 45px 50px -20px rgba(32, 32, 70, 0.5);
+          box-shadow: 0 45px 50px -20px rgba(32, 32, 70, 0.5);
 }
 
 .container #info {
