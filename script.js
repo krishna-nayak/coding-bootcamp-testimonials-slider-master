@@ -36,9 +36,6 @@ function showPerson(currentItem) {
     description.textContent = item.description;
     personName.textContent = item.name;
     job.textContent = item.job;
-
-    //animation function call
-    animationMobile(userImg);
 }
 
 next.addEventListener("click", function () {
@@ -62,9 +59,4 @@ function buttonEfect(btn) {
     setTimeout(() => {
         btn.classList.remove("active");
     }, 100);
-}
-
-// const image = document.querySelector(".image");
-function animationMobile(image) {
-    image.style.animation = "";
 }
