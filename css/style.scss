@@ -69,7 +69,8 @@ body {
         background-position-x: 95px;
         position: absolute;
         z-index: 2;
-        margin-top: 97px;
+        margin-top: 160px;
+        // margin-top: 97px;
         margin-right: 450px;
         left: 90px;
         .description {
@@ -123,6 +124,7 @@ body {
         padding: 50px;
         #info {
             left: 5%;
+            margin-top: 97px;
             .description {
                 margin-bottom: 25px;
             }
