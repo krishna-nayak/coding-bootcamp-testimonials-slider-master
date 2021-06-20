@@ -96,6 +96,39 @@ body {
   color: #babacf;
 }
 
+/* Animation Effect*/
+.active {
+  background: #777;
+  opacity: 0.2;
+}
+
+#user {
+  -webkit-animation: motion 2s ease-in-out infinite alternate;
+          animation: motion 2s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes motion {
+  from {
+    -webkit-transform: translateY(5%);
+            transform: translateY(5%);
+  }
+  to {
+    -webkit-transform: translateY(-5%);
+            transform: translateY(-5%);
+  }
+}
+
+@keyframes motion {
+  from {
+    -webkit-transform: translateY(5%);
+            transform: translateY(5%);
+  }
+  to {
+    -webkit-transform: translateY(-5%);
+            transform: translateY(-5%);
+  }
+}
+
 /* Media Section */
 @media (min-width: 1500px) {
   body {

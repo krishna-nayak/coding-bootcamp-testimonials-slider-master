@@ -87,6 +87,25 @@ body {
     }
 }
 
+/* Animation Effect*/
+.active {
+    background: #777;
+    opacity: 0.2;
+}
+
+#user {
+    animation: motion 2s ease-in-out infinite alternate;
+}
+
+@keyframes motion {
+    from {
+        transform: translateY(5%);
+    }
+    to {
+        transform: translateY(-5%);
+    }
+}
+
 /* Media Section */
 @media (min-width: 1500px) {
     body {
