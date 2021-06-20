@@ -31,20 +31,40 @@ window.addEventListener("DOMContentLoaded", function () {
 function showPerson(currentItem) {
     const item = data[currentItem];
     const userImg = document.getElementById("user");
-    console.log(userImg + " " + item.pic);
+
     userImg.src = item.pic;
     description.textContent = item.description;
     personName.textContent = item.name;
+    job.textContent = item.job;
+
+    //animation function call
+    animationMobile(userImg);
 }
 
 next.addEventListener("click", function () {
+    buttonEfect(next);
+
     currentItem++;
     if (currentItem === data.length) currentItem = 0;
     showPerson(currentItem);
 });
 
 prev.addEventListener("click", function () {
+    buttonEfect(prev);
+
     currentItem--;
     if (currentItem < 0) currentItem = data.length - 1;
     showPerson(currentItem);
 });
+
+function buttonEfect(btn) {
+    btn.classList.add("active");
+    setTimeout(() => {
+        btn.classList.remove("active");
+    }, 100);
+}
+
+// const image = document.querySelector(".image");
+function animationMobile(image) {
+    image.style.animation = "";
+}
